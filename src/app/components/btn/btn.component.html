@@ -1,1 +1,7 @@
-<p>btn works!</p>
+<button
+  [type]="typeBtn"
+  class="text-white w-full font-medium rounded text-sm focus:ring-4 px-5 py-2"
+  [ngClass]="colors"
+>
+  <ng-content></ng-content>
+</button>
