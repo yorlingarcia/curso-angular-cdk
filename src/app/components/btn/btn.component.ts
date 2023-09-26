@@ -24,6 +24,9 @@ export class BtnComponent implements OnInit {
       'hover:bg-red-600': this.color === 'red',
       'bg-red-700': this.color === 'red',
       'focus:ring-red-300': this.color === 'red',
+      'hover:bg-sky-600': this.color === 'sky',
+      'bg-sky-700': this.color === 'sky',
+      'focus:ring-sky-300': this.color === 'sky',
     };
   }
 }
