@@ -122,6 +122,19 @@
         >Terms of Service</a
       >
     </div>
+    <div style="text-align: center">
+      <select
+        [ngModel]="selectedLanguage"
+        (ngModelChange)="selectLanguage($event)"
+      >
+        <option value="es">
+          {{ "LOGIN.SPANISH" | translate }}
+        </option>
+        <option value="en">
+          {{ "LOGIN.ENGLISH" | translate }}
+        </option>
+      </select>
+    </div>
     <hr class="my-4 border-b-1 border-gray-400" />
     <div class="flex justify-center">
       <img
