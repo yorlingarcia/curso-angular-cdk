@@ -12,33 +12,57 @@
       <div class="flex items-center">
         <ul class="flex items-center space-x-2 text-sm font-medium">
           <li>
-            <a class="block py-3 px-4 text-white">Workspaces</a>
+            <a class="block py-3 px-4 text-white">Espacios de trabajo</a>
           </li>
           <li>
-            <a class="block py-3 px-4 text-white">Recent</a>
+            <a class="block py-3 px-4 text-white">Reciente</a>
           </li>
           <li>
-            <app-btn typeBtn="button" color="sky">Create</app-btn>
+            <a class="block py-3 px-4 text-white">Mas</a>
+          </li>
+          <li>
+            <app-btn typeBtn="button" color="primary">+</app-btn>
           </li>
         </ul>
       </div>
     </div>
     <div class="flex items-center">
-      <button
-        type="button"
-        class="flex rounded-full"
-        aria-expanded="false"
-        type="button"
-        (click)="isOpen = !isOpen"
-        cdkOverlayOrigin
-        #menuOverlay="cdkOverlayOrigin"
-      >
-        <img
-          class="w-8 h-8 rounded-full"
-          src="https://api.lorem.space/image/face?w=400&h=400"
-          alt="user photo"
-        />
-      </button>
+      <div class="flex space-x-2">
+        <label>
+          <input
+            type="text"
+            placeholder="Buscar..."
+            class="py-1 rounded-lg hover:bg-gray-100"
+            style="
+              background-image: url('https://www.w3schools.com/css/searchicon.png');
+              background-position: 6px 6px;
+              background-repeat: no-repeat;
+              padding-left: 30px;
+            "
+          />
+        </label>
+        <button class="text-white" type="button">
+          <fa-icon [icon]="faBell"></fa-icon>
+        </button>
+        <button class="text-white" type="button">
+          <fa-icon [icon]="faInfoCircle"></fa-icon>
+        </button>
+        <button
+          type="button"
+          class="flex rounded-full"
+          aria-expanded="false"
+          type="button"
+          (click)="isOpen = !isOpen"
+          cdkOverlayOrigin
+          #menuOverlay="cdkOverlayOrigin"
+        >
+          <img
+            class="w-8 h-8 rounded-full"
+            src="https://api.lorem.space/image/face?w=400&h=400"
+            alt="user photo"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -57,7 +81,7 @@
     <div class="py-3 px-4 flex justify-between">
       <span class="block text-sm text-center text-gray-900">Account</span>
       <button (click)="isOpen = !isOpen" class="block text-sm text-gray-900">
-        X
+        <fa-icon [icon]="faClose"></fa-icon>
       </button>
     </div>
     <div class="py-3 px-4 flex items-center space-x-4">
