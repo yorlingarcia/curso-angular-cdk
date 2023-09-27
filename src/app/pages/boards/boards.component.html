@@ -1,40 +1,30 @@
 <app-navbar></app-navbar>
-<div class="flex flex-row">
+<div class="container mx-auto flex flex-row">
   <div class="flex flex-col">
-    <div>Espacio de trabajo</div>
-    <div>
-      <div>Tableros</div>
-      <div>Miembros</div>
-      <div>Ahustes del espacio de trabajo</div>
+    <button class="flex flex-row justify-start">
+      <div class="pl-2">
+        <fa-icon [icon]="faTable"></fa-icon>
+      </div>
+      <div class="pl-2">Tableros</div>
+    </button>
+    <button class="flex flex-row justify-start">
+      <div class="pl-2"><fa-icon [icon]="faTabletAlt"></fa-icon></div>
+      <div class="pl-2">Plantillas</div>
+    </button>
+    <button class="flex flex-row justify-start">
+      <div class="pl-2">
+        <fa-icon [icon]="faWaveSquare"></fa-icon>
+      </div>
+      <div class="pl-2">Inicio</div>
+    </button>
+    <div class="flex flex-col">
+      <div>Espacio de trabajo</div>
+      <div>Espacio de trabajo de Nombre</div>
     </div>
-    <div>Vistas del espacio de trabajo</div>
-    <div>
-      <div>Tabla</div>
-      <div>Calendario</div>
-    </div>
-    <div>Sustableros</div>
-    <div>Mi tablero</div>
   </div>
   <div class="flex flex-col w-full">
-    <div
-      class="w-full bg-gray-200 flex flex-row flex-wrap justify-between items-center"
-    >
-      <div class="flex flex-row items-center">
-        <div>Mi tablero Trello</div>
-        <div>Estrella</div>
-        <button>Contactos</button>
-        <button>Tablero</button>
-      </div>
-      <div class="flex flex-row items-center">
-        <button>nave</button>
-        <button>rayo</button>
-        <button>filtrar</button>
-        <button>Perfil</button>
-        <button>Compartir</button>
-        <button>tres puntos</button>
-      </div>
-    </div>
-    <div class="grid grid-cols-4 gap-4 mx-4 py-4">
+    <div>Visto Recientemente</div>
+    <div class="grid grid-cols-4 gap-4">
       <div
         class="w-full bg-sky-700 px-4 py-2 rounded text-white font-bold h-24"
       >
@@ -55,6 +45,40 @@
       >
         Board 1
       </div>
+    </div>
+    <div>Tus espacios de trabajos</div>
+    <div class="flex flex-row flex-grow">
+      <div>Espacio de trabajo de ...</div>
+      <button>Tableros</button>
+      <button>Vistas</button>
+      <button>Miembros</button>
+      <button>Configuracion</button>
+      <button>Cambiar Plan</button>
+    </div>
+    <div class="grid grid-cols-4 gap-4">
+      <div
+        class="w-full bg-sky-700 px-4 py-2 rounded text-white font-bold h-24"
+      >
+        Board 1
+      </div>
+      <div
+        class="w-full bg-green-700 px-4 py-2 rounded text-white font-bold h-24"
+      >
+        Board 1
+      </div>
+      <div
+        class="w-full bg-amber-700 px-4 py-2 rounded text-white font-bold h-24"
+      >
+        Board 1
+      </div>
+      <div
+        class="w-full bg-indigo-700 px-4 py-2 rounded text-white font-bold h-24"
+      >
+        Board 1
+      </div>
+    </div>
+    <div>
+      <button>Ver todos los tableros cerrados</button>
     </div>
   </div>
 </div>
