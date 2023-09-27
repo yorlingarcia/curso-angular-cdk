@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  faClock,
   faTable,
   faTabletAlt,
   faWaveSquare,
@@ -13,6 +14,7 @@ export class BoardsComponent implements OnInit {
   faTable = faTable;
   faTabletAlt = faTabletAlt;
   faWaveSquare = faWaveSquare;
+  faClock = faClock;
 
   constructor() {}
 
