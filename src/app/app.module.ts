@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -30,6 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     OverlayModule,
+    CdkAccordionModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
