@@ -1,27 +1,40 @@
-<nav class="bg-sky-700 border-gray-200 px-6 shadow-md">
-  <div class="flex flex-wrap justify-between items-center">
+<nav class="bg-white border-b-2 border-gray-300 px-6">
+  <div class="flex flex-wrap justify-between items-center my-1">
     <div class="flex items-center">
-      <a routerLink="/">
+      <a href="" class="hover:bg-gray-300 py-2 px-2 rounded">
+        <img src="/assets/svg/icon-menu.svg" alt="" />
+      </a>
+
+      <a routerLink="/" class="hover:bg-gray-300 rounded">
         <img
           loading="lazy"
-          class="w-20 mr-8"
-          src="/assets/images/logo/logo-gradient-white-trello.png"
+          class="w-28 px-4"
+          src="/assets/images/logo/logo-gradient-neutral-trello.png"
           alt="logo"
         />
       </a>
       <div class="flex items-center">
         <ul class="flex items-center space-x-2 text-sm font-medium">
           <li>
-            <a class="block py-3 px-4 text-white">Espacios de trabajo</a>
+            <a class="py-3 px-4 text-gray-600 hover:bg-gray-300 rounded"
+              >Espacios de trabajo
+              <fa-icon [icon]="faAngleDown" class="px-2"></fa-icon
+            ></a>
           </li>
           <li>
-            <a class="block py-3 px-4 text-white">Reciente</a>
+            <a class="block py-3 px-4 text-gray-600 hover:bg-gray-300 rounded"
+              >Reciente <fa-icon [icon]="faAngleDown" class="px-2"></fa-icon
+            ></a>
           </li>
           <li>
-            <a class="block py-3 px-4 text-white">Marcado</a>
+            <a class="block py-3 px-4 text-gray-600 hover:bg-gray-300 rounded"
+              >Marcado <fa-icon [icon]="faAngleDown" class="px-2"></fa-icon
+            ></a>
           </li>
           <li>
-            <a class="block py-3 px-4 text-white">Plantillas</a>
+            <a class="block py-3 px-4 text-gray-600 hover:bg-gray-300 rounded"
+              >Plantillas <fa-icon [icon]="faAngleDown" class="px-2"></fa-icon
+            ></a>
           </li>
           <li>
             <app-btn typeBtn="button" color="primary">Crear</app-btn>
@@ -31,23 +44,33 @@
     </div>
     <div class="flex items-center">
       <div class="flex space-x-2">
-        <label>
-          <input
-            type="text"
-            placeholder="Buscar..."
-            class="py-1 rounded-lg hover:bg-gray-100"
-            style="
-              background-image: url('https://www.w3schools.com/css/searchicon.png');
-              background-position: 6px 6px;
-              background-repeat: no-repeat;
-              padding-left: 30px;
-            "
+        <div
+          class="flex flex-row rounded border justify-around items-center"
+          style="background-color: #eef3f8; height: 2rem"
+        >
+          <img
+            src="/assets/svg/icons8-search.svg"
+            alt=""
+            style="color: rgba(214, 214, 214, 0.836)"
+            class="w-1/5 h-4"
           />
-        </label>
-        <button class="text-white" type="button">
+          <input
+            type="search"
+            placeholder="Buscar"
+            class="w-4/5 border-none bg-transparent"
+          />
+        </div>
+
+        <button
+          class="text-gray-500 w-8 h-8 hover:bg-gray-200 rounded-full"
+          type="button"
+        >
           <fa-icon [icon]="faBell"></fa-icon>
         </button>
-        <button class="text-white" type="button">
+        <button
+          class="text-gray-500 w-8 h-8 hover:bg-gray-200 rounded-full"
+          type="button"
+        >
           <fa-icon [icon]="faInfoCircle"></fa-icon>
         </button>
         <button

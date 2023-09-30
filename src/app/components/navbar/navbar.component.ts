@@ -3,6 +3,7 @@ import {
   faBell,
   faInfoCircle,
   faDoorClosed,
+  faAngleDown,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -16,6 +17,7 @@ export class NavbarComponent implements OnInit {
   faBell = faBell;
   faInfoCircle = faInfoCircle;
   faClose = faDoorClosed;
+  faAngleDown = faAngleDown;
 
   constructor() {}
 
