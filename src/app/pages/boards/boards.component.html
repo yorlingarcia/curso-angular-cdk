@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container mx-auto flex flex-row pt-8">
-  <div class="flex flex-col mx-2 w-3/12">
+  <div class="flex flex-col mx-2 w-2/12">
     <button
       class="py-2 my-1 flex flex-row justify-start bg-sky-200 rounded-lg"
       style="color: rgba(0, 0, 255, 0.75)"
@@ -36,7 +36,7 @@
             type="button"
             (click)="accordionMenu.toggle()"
           >
-            My Workspace
+            Espacio de trabajo de ...
             <fa-icon
               [icon]="accordionMenu.expanded ? faAngleUp : faAngleDown"
             ></fa-icon>
@@ -50,27 +50,27 @@
             <ul class="ml-2 flex flex-col text-sm text-gray-700">
               <li>
                 <a class="block py-1 px-3"
-                  ><fa-icon [icon]="faTrello"></fa-icon> Boards</a
+                  ><fa-icon [icon]="faTrello"></fa-icon> Tableros</a
                 >
               </li>
               <li>
                 <a class="block py-1 px-3"
-                  ><fa-icon [icon]="faHeart"></fa-icon> Highlights</a
+                  ><fa-icon [icon]="faHeart"></fa-icon> Lo mas detacado</a
                 >
               </li>
               <li>
                 <a class="block py-1 px-3"
-                  ><fa-icon [icon]="faBorderAll"></fa-icon> Views</a
+                  ><fa-icon [icon]="faBorderAll"></fa-icon> Vistas</a
                 >
               </li>
               <li>
                 <a class="block py-1 px-3"
-                  ><fa-icon [icon]="faUsers"></fa-icon> Members</a
+                  ><fa-icon [icon]="faUsers"></fa-icon> Miembros</a
                 >
               </li>
               <li>
                 <a class="block py-1 px-3"
-                  ><fa-icon [icon]="faGear"></fa-icon> Settings</a
+                  ><fa-icon [icon]="faGear"></fa-icon> Configuracion</a
                 >
               </li>
             </ul>
