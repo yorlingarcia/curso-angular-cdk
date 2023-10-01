@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -15,6 +16,7 @@ import { BoardsComponent } from './pages/boards/boards.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BoardComponent } from './pages/board/board.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,12 +29,14 @@ export function createTranslateLoader(http: HttpClient) {
     BtnComponent,
     BoardsComponent,
     NavbarComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     OverlayModule,
     CdkAccordionModule,
+    DragDropModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
