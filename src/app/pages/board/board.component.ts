@@ -1,5 +1,7 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { faTrello } from '@fortawesome/free-brands-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { ToDo } from 'src/app/models/todo.model';
 
 @Component({
@@ -7,6 +9,8 @@ import { ToDo } from 'src/app/models/todo.model';
   templateUrl: './board.component.html',
 })
 export class BoardComponent implements OnInit {
+  faTrello = faTrello;
+  faUser = faUser;
   toDos: ToDo[] = [
     {
       id: '1',
@@ -25,8 +29,7 @@ export class BoardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  drop($event: CdkDragDrop<any[]>) {
-    console.log($event);
-    // moveItemInArray();
+  drop(event: CdkDragDrop<any[]>) {
+    moveItemInArray(this.toDos, event.previousIndex, event.currentIndex);
   }
 }
