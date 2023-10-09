@@ -1,7 +1,16 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { faTrello } from '@fortawesome/free-brands-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleDown,
+  faAngleLeft,
+  faAngleRight,
+  faCalendarDay,
+  faCog,
+  faPlus,
+  faTable,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
 import { ToDo } from 'src/app/models/todo.model';
 
 @Component({
@@ -11,6 +20,13 @@ import { ToDo } from 'src/app/models/todo.model';
 export class BoardComponent implements OnInit {
   faTrello = faTrello;
   faUser = faUser;
+  faGear = faCog;
+  faAngleDown = faAngleDown;
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
+  faPlus = faPlus;
+  faTable = faTable;
+  faCalendar = faCalendarDay;
   toDos: ToDo[] = [
     {
       id: '1',
