@@ -1,5 +1,11 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { faTrello } from '@fortawesome/free-brands-svg-icons';
 import {
   faAngleDown,
@@ -50,10 +56,12 @@ export class BoardComponent {
     },
   ];
 
-  valorInicial = 'Texto inicial';
-  constructor() {}
+  @ViewChild('miInput') miInput!: ElementRef;
+  mostrar = false;
 
-  ngOnInit(): void {}
+  valorInicial = 'Texto inicial';
+
+  constructor(private renderer: Renderer2) {}
 
   drop(event: CdkDragDrop<any[]>) {
     moveItemInArray(this.toDos, event.previousIndex, event.currentIndex);
@@ -61,6 +69,13 @@ export class BoardComponent {
 
   enableEditMode(): void {
     this.editMode = true;
+    const inputElement = this.renderer.selectRootElement(
+      this.miInput.nativeElement
+    );
+    setTimeout(() => {
+      inputElement.focus();
+      inputElement.select();
+    });
   }
 
   disableEditMode(): void {
