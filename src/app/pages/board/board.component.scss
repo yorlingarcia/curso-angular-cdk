@@ -5,3 +5,20 @@
 .button-section-board:hover .but-none {
   display: block;
 }
+
+.edit {
+  display: none;
+}
+
+.editing {
+  .edit {
+    display: inline;
+  }
+  .view {
+    display: none;
+  }
+}
+
+.view {
+  position: relative;
+}

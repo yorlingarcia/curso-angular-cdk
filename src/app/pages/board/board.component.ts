@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faTrello } from '@fortawesome/free-brands-svg-icons';
 import {
   faAngleDown,
@@ -20,7 +20,7 @@ import { ToDo } from 'src/app/models/todo.model';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
   faTrello = faTrello;
   faUser = faUser;
   faGear = faCog;
@@ -32,6 +32,9 @@ export class BoardComponent implements OnInit {
   faCalendar = faCalendarDay;
   faEllipsis = faEllipsisH;
   faStar = faStar;
+
+  titleCard: string = 'Mi tablero Trello';
+  editMode: boolean | null = false;
   toDos: ToDo[] = [
     {
       id: '1',
@@ -46,11 +49,26 @@ export class BoardComponent implements OnInit {
       title: 'Task 3',
     },
   ];
+
+  valorInicial = 'Texto inicial';
   constructor() {}
 
   ngOnInit(): void {}
 
   drop(event: CdkDragDrop<any[]>) {
     moveItemInArray(this.toDos, event.previousIndex, event.currentIndex);
+  }
+
+  enableEditMode(): void {
+    this.editMode = true;
+  }
+
+  disableEditMode(): void {
+    this.editMode = null;
+  }
+
+  modificacionTitleCard(event: any) {
+    this.titleCard = event.target.value;
+    this.disableEditMode();
   }
 }
