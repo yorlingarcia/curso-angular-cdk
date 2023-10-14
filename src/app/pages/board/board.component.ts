@@ -1,4 +1,8 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 import {
   AfterViewInit,
   Component,
@@ -60,6 +64,7 @@ export class BoardComponent {
 
   titleCard: string = 'Mi tablero Trello';
   editMode: boolean | null = false;
+
   toDos: ToDo[] = [
     {
       id: '1',
@@ -75,10 +80,26 @@ export class BoardComponent {
     },
   ];
 
+  doing: ToDo[] = [{ id: '3', title: 'completar fidelidad de disenio' }];
+  done: ToDo[] = [{ id: '4', title: 'fidelidad del navbar del board' }];
+
   constructor(private renderer: Renderer2) {}
 
-  drop(event: CdkDragDrop<any[]>) {
-    moveItemInArray(this.toDos, event.previousIndex, event.currentIndex);
+  drop(event: CdkDragDrop<ToDo[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
   }
 
   enableEditMode(): void {

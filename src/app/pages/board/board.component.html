@@ -190,16 +190,17 @@
       </div>
       <div class="flex flex-col h-full">
         <div class="w-full grow bg-sky-600 p-4">
-          <div class="flex items-start">
+          <div class="flex items-start w-full h-full" cdkDropListGroup>
             <div class="rounded-xl bg-gray-200 w-72 p-2 mr-3">
               <div class="flex justify-between py-1">
                 <h3 class="text-sm font-bold ml-2">Lista de Tareas</h3>
               </div>
 
               <div
-                class="text-sm mt-2"
+                class="text-sm mt-2 min-h-[2.5rem]"
                 cdkDropList
                 (cdkDropListDropped)="drop($event)"
+                [cdkDropListData]="toDos"
               >
                 <div
                   *ngFor="let ToDo of toDos"
@@ -216,21 +217,18 @@
                 <h3 class="text-sm font-bold ml-2">En Proceso</h3>
               </div>
 
-              <div class="text-sm mt-2">
+              <div
+                class="text-sm mt-2 min-h-[2.5rem]"
+                cdkDropList
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListData]="doing"
+              >
                 <div
+                  *ngFor="let ToDo of doing"
+                  cdkDrag
                   class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
                 >
-                  Task 1
-                </div>
-                <div
-                  class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
-                >
-                  Task 2
-                </div>
-                <div
-                  class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
-                >
-                  Task 3
+                  {{ ToDo.title }}
                 </div>
               </div>
             </div>
@@ -240,21 +238,18 @@
                 <h3 class="text-sm font-bold ml-2">Hecho</h3>
               </div>
 
-              <div class="text-sm mt-2">
+              <div
+                class="text-sm mt-2 min-h-[2.5rem]"
+                cdkDropList
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListData]="done"
+              >
                 <div
+                  *ngFor="let ToDo of done"
+                  cdkDrag
                   class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
                 >
-                  Task 1
-                </div>
-                <div
-                  class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
-                >
-                  Task 2
-                </div>
-                <div
-                  class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
-                >
-                  Task 3
+                  {{ ToDo.title }}
                 </div>
               </div>
             </div>
