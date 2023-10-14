@@ -23,6 +23,10 @@ import {
   faStarOfLife,
   faStarOfDavid,
   faChalkboard,
+  faRocket,
+  faBolt,
+  faFilter,
+  faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { ToDo } from 'src/app/models/todo.model';
 
@@ -33,6 +37,8 @@ import { ToDo } from 'src/app/models/todo.model';
 })
 export class BoardComponent {
   @ViewChild('miInput') miInput!: ElementRef;
+
+  // Iconos usados de Fontawesome
   faTrello = faTrello;
   faUser = faUser;
   faGear = faCog;
@@ -42,11 +48,15 @@ export class BoardComponent {
   faPlus = faPlus;
   faTable = faTable;
   faCalendar = faCalendarDay;
-  faEllipsis = faEllipsisH;
+  faEllipsisH = faEllipsisH;
   faStar = faStar;
   faStarOfDavid = faStarOfDavid;
   faUserFriends = faUserFriends;
   faChalkBoard = faChalkboard;
+  faRocket = faRocket;
+  faBolt = faBolt;
+  faFilter = faFilter;
+  faUserPlus = faUserPlus;
 
   titleCard: string = 'Mi tablero Trello';
   editMode: boolean | null = false;

@@ -70,7 +70,7 @@
             <div class="pl-2">Tabla</div>
           </div>
           <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
-            <fa-icon [icon]="faEllipsis"></fa-icon>
+            <fa-icon [icon]="faEllipsisH"></fa-icon>
           </button>
         </button>
         <button
@@ -84,7 +84,7 @@
             <div class="pl-2">Calendario</div>
           </div>
           <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
-            <fa-icon [icon]="faEllipsis"></fa-icon>
+            <fa-icon [icon]="faEllipsisH"></fa-icon>
           </button>
         </button>
       </div>
@@ -92,7 +92,7 @@
         <div>Sus tableros</div>
         <div class="flex flex-row">
           <button class="but-none mx-2 w-6 h-6 hover:bg-gray-300 rounded">
-            <fa-icon [icon]="faEllipsis"></fa-icon>
+            <fa-icon [icon]="faEllipsisH"></fa-icon>
           </button>
           <button class="w-6 h-6 hover:bg-gray-300 rounded">
             <fa-icon [icon]="faPlus"></fa-icon>
@@ -108,7 +108,7 @@
         </button>
         <div class="flex flex-row">
           <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
-            <fa-icon [icon]="faEllipsis"></fa-icon>
+            <fa-icon [icon]="faEllipsisH"></fa-icon>
           </button>
           <button class="but-none w-6 h-6 rounded mr-2">
             <fa-icon [icon]="faStar"></fa-icon>
@@ -157,12 +157,35 @@
           </button>
         </div>
         <div class="flex flex-row items-center">
-          <button>nave</button>
-          <button>rayo</button>
-          <button>filtrar</button>
-          <button>Perfil</button>
-          <button>Compartir</button>
-          <button>tres puntos</button>
+          <button class="hover:bg-gray-300 w-10 h-10 rounded">
+            <fa-icon [icon]="faRocket"></fa-icon>
+          </button>
+          <button class="hover:bg-gray-300 w-10 h-10 rounded">
+            <fa-icon [icon]="faBolt"></fa-icon>
+          </button>
+          <button
+            class="bg-gray-400 hover:bg-gray-300 mx-1 p-2 flex flex-row justify-between items-center rounded h-10"
+          >
+            <fa-icon [icon]="faFilter"></fa-icon>
+            <div class="ml-2">Filtros</div>
+          </button>
+          <div class="mx-1 w-1 h-6 border-l-2 border-gray-400"></div>
+          <button class="w-10 h-10 rounded-full bg-sky-500 hover:bg-sky-400">
+            <img
+              class="w-10 h-10 rounded-full"
+              src="https://api.lorem.space/image/face?w=400&h=400"
+              alt="user photo"
+            />
+          </button>
+          <button
+            class="bg-gray-400 hover:bg-gray-300 mx-1 p-2 flex flex-row justify-between items-center rounded h-10"
+          >
+            <fa-icon [icon]="faUserPlus"></fa-icon>
+            <div class="ml-2">Compartir</div>
+          </button>
+          <button class="w-10 h-10 rounded hover:bg-gray-300">
+            <fa-icon [icon]="faEllipsisH"></fa-icon>
+          </button>
         </div>
       </div>
       <div class="flex flex-col h-full">
