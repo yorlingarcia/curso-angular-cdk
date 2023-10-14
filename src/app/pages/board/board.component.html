@@ -1,19 +1,26 @@
 <div class="h-screen w-full m-0 p-0">
   <app-navbar></app-navbar>
   <div class="flex flex-row h-full">
-    <div class="flex flex-col w-2/12 h-full">
-      <div class="flex flex-row items-center border-b-2 border-gray-300">
-        <button type="button" class="mx-2 w-8 h-8 bg-green-400"></button>
-        <div class="flex flex-col justify-start">
-          <p>Espacio de trabajo</p>
-          <button class="p-0 text-start">Nombre</button>
-          <p>Gratuito</p>
+    <div class="flex flex-col w-[20%] h-full text-base">
+      <div
+        class="px-2 flex flex-row justify-between items-center border-b-2 border-gray-300"
+      >
+        <div class="flex flex-row items-center">
+          <button
+            type="button"
+            class="mx-2 w-8 h-8 bg-green-400 rounded"
+          ></button>
+          <div class="flex flex-col justify-start">
+            <p>Espacio de trabajo</p>
+            <button class="p-0 text-start">Nombre</button>
+            <p>Gratuito</p>
+          </div>
         </div>
         <button class="hover:bg-gray-300 w-8 h-8 rounded">
           <fa-icon [icon]="faAngleLeft"></fa-icon>
         </button>
       </div>
-      <div>
+      <div class="my-4">
         <button
           class="py-1 flex flex-row justify-start hover:bg-gray-200 w-full"
           type="button"
@@ -24,7 +31,7 @@
           <div class="pl-2">Tableros</div>
         </button>
         <button
-          class="py-1 flex flex-row justify-between hover:bg-gray-200 w-full"
+          class="py-1 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
           type="button"
         >
           <div class="flex flex-row">
@@ -38,7 +45,7 @@
           </button>
         </button>
         <button
-          class="py-2 flex flex-row justify-start items-center hover:bg-gray-200 w-full"
+          class="py-2 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
           type="button"
         >
           <div class="pl-3">
@@ -53,27 +60,63 @@
       <div class="pl-2">Vistas del espacio de trabajo</div>
       <div class="flex flex-col">
         <button
-          class="py-2 flex flex-row justify-start hover:bg-gray-200 w-full"
+          class="button-section-board py-2 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
           type="button"
         >
-          <div class="pl-3">
-            <fa-icon [icon]="faTable"></fa-icon>
+          <div class="flex flex-row">
+            <div class="pl-3">
+              <fa-icon [icon]="faTable"></fa-icon>
+            </div>
+            <div class="pl-2">Tabla</div>
           </div>
-          <div class="pl-2">Tabla</div>
+          <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
+            <fa-icon [icon]="faEllipsis"></fa-icon>
+          </button>
         </button>
         <button
-          class="py-2 flex flex-row justify-start hover:bg-gray-200 w-full"
+          class="button-section-board py-2 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
           type="button"
         >
-          <div class="pl-3">
-            <fa-icon [icon]="faCalendar"></fa-icon>
+          <div class="flex flex-row">
+            <div class="pl-3">
+              <fa-icon [icon]="faCalendar"></fa-icon>
+            </div>
+            <div class="pl-2">Calendario</div>
           </div>
-          <div class="pl-2">Calendario</div>
+          <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
+            <fa-icon [icon]="faEllipsis"></fa-icon>
+          </button>
         </button>
       </div>
-      <div>Mi tablero</div>
+      <div class="my-2 button-section-board flex flex-row justify-between px-2">
+        <div>Sus tableros</div>
+        <div class="flex flex-row">
+          <button class="but-none mx-2 w-6 h-6 hover:bg-gray-300 rounded">
+            <fa-icon [icon]="faEllipsis"></fa-icon>
+          </button>
+          <button class="w-6 h-6 hover:bg-gray-300 rounded">
+            <fa-icon [icon]="faPlus"></fa-icon>
+          </button>
+        </div>
+      </div>
+      <div
+        class="button-section-board py-2 flex flex-row justify-between items-center hover:bg-gray-200 bg-gray-300 w-full"
+      >
+        <button type="button" class="flex flex-row">
+          <div class="w-6 h-6 bg-gray-500"></div>
+          <div class="pl-2">Mi Tablero de Trello</div>
+        </button>
+        <div class="flex flex-row">
+          <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
+            <fa-icon [icon]="faEllipsis"></fa-icon>
+          </button>
+          <button class="but-none w-6 h-6 rounded mr-2">
+            <fa-icon [icon]="faStar"></fa-icon>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="flex flex-col w-10/12 h-full">
+    <div class="flex flex-col w-[80%] h-full">
       <div
         class="w-full bg-gray-200 flex flex-row flex-wrap justify-between items-center"
       >

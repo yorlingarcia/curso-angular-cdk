@@ -10,12 +10,15 @@ import {
   faPlus,
   faTable,
   faUser,
+  faEllipsisH,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import { ToDo } from 'src/app/models/todo.model';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
+  styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent implements OnInit {
   faTrello = faTrello;
@@ -27,6 +30,8 @@ export class BoardComponent implements OnInit {
   faPlus = faPlus;
   faTable = faTable;
   faCalendar = faCalendarDay;
+  faEllipsis = faEllipsisH;
+  faStar = faStar;
   toDos: ToDo[] = [
     {
       id: '1',
