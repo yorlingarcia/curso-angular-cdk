@@ -18,6 +18,11 @@ import {
   faUser,
   faEllipsisH,
   faStar,
+  faUserFriends,
+  faStarHalf,
+  faStarOfLife,
+  faStarOfDavid,
+  faChalkboard,
 } from '@fortawesome/free-solid-svg-icons';
 import { ToDo } from 'src/app/models/todo.model';
 
@@ -27,6 +32,7 @@ import { ToDo } from 'src/app/models/todo.model';
   styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent {
+  @ViewChild('miInput') miInput!: ElementRef;
   faTrello = faTrello;
   faUser = faUser;
   faGear = faCog;
@@ -38,6 +44,9 @@ export class BoardComponent {
   faCalendar = faCalendarDay;
   faEllipsis = faEllipsisH;
   faStar = faStar;
+  faStarOfDavid = faStarOfDavid;
+  faUserFriends = faUserFriends;
+  faChalkBoard = faChalkboard;
 
   titleCard: string = 'Mi tablero Trello';
   editMode: boolean | null = false;
@@ -55,11 +64,6 @@ export class BoardComponent {
       title: 'Task 3',
     },
   ];
-
-  @ViewChild('miInput') miInput!: ElementRef;
-  mostrar = false;
-
-  valorInicial = 'Texto inicial';
 
   constructor(private renderer: Renderer2) {}
 

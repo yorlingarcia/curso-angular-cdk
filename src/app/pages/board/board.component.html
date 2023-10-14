@@ -121,13 +121,17 @@
         class="w-full bg-gray-200 flex flex-row flex-wrap justify-between items-center p-3"
       >
         <div class="flex flex-row items-center">
-          <button type="button" [ngClass]="{ editing: editMode }">
+          <button
+            type="button"
+            class="mx-2 hover:bg-gray-300 rounded p-2 h-10 flex items-center"
+            [ngClass]="{ editing: editMode }"
+          >
             <div class="view text-xl" (click)="enableEditMode()">
               {{ titleCard }}
             </div>
             <input
               #miInput
-              class="edit p-0"
+              class="text-xl edit p-0"
               autofocus="autofocus"
               type="text"
               [value]="titleCard"
@@ -136,9 +140,21 @@
               (blur)="disableEditMode()"
             />
           </button>
-          <div>Estrella</div>
-          <button>Contactos</button>
-          <button>Tablero</button>
+          <button class="mx-1 hover:bg-gray-300 w-10 h-10 rounded">
+            <fa-icon [icon]="faStarOfDavid"></fa-icon>
+          </button>
+          <button class="mx-1 hover:bg-gray-300 w-10 h-10 rounded">
+            <fa-icon [icon]="faUserFriends"></fa-icon>
+          </button>
+          <button
+            class="bg-gray-400 hover:bg-gray-300 mx-1 p-2 flex flex-row justify-between items-center rounded h-10"
+          >
+            <fa-icon [icon]="faChalkBoard"></fa-icon>
+            <div class="ml-2">Tablero</div>
+          </button>
+          <button class="hover:bg-gray-300 w-10 h-10 rounded">
+            <fa-icon [icon]="faAngleDown"></fa-icon>
+          </button>
         </div>
         <div class="flex flex-row items-center">
           <button>nave</button>
