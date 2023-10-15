@@ -122,6 +122,10 @@ export class BoardComponent {
     }
   }
 
+  dropColumn(event: CdkDragDrop<ToDo[]>) {
+    moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
+  }
+
   enableEditMode(): void {
     this.editMode = true;
     const inputElement = this.renderer.selectRootElement(

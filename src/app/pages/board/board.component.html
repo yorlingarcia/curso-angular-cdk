@@ -1,6 +1,7 @@
 <div class="flex flex-col h-screen">
   <app-navbar></app-navbar>
   <div class="flex flex-row grow w-full">
+    <!-- columna izquierda del page board -->
     <div class="flex flex-col w-[20%] h-full text-base">
       <div
         class="px-2 flex flex-row justify-between items-center border-b-2 border-gray-300"
@@ -116,7 +117,9 @@
         </div>
       </div>
     </div>
+    <!-- columna derecha -->
     <div class="flex flex-col w-[80%] h-full">
+      <!-- navbar interno de la pagina board -->
       <div
         class="w-full bg-gray-200 flex flex-row flex-wrap justify-between items-center p-3"
       >
@@ -188,14 +191,23 @@
           </button>
         </div>
       </div>
+      <!-- contenedor de listas / tareas -->
       <div
         class="flex flex-row justify-around grow w-full h-full overflow-x-scroll bg-sky-600"
       >
         <div class="w-full h-full p-4">
-          <div class="flex items-start w-full h-full" cdkDropListGroup>
+          <div
+            class="flex items-start w-full h-full"
+            cdkDropListGroup
+            cdkDropList
+            cdkDropListOrientation="horizontal"
+            (cdkDropListDropped)="dropColumn($event)"
+          >
+            <!-- generacion de listas con cilo for -->
             <div
               class="rounded-xl bg-gray-200 w-72 p-2 mr-3 shrink-0"
               *ngFor="let column of columns; let i = index"
+              cdkDrag
             >
               <div class="flex items-center justify-between py-1">
                 <h3 class="text-sm font-bold ml-2">{{ column.title }}</h3>
@@ -266,7 +278,7 @@
                 </ng-template>
               </div>
             </div>
-
+            <!-- seccion de aniadir otra lista -->
             <div
               class="flex flex-row items-center w-72 shrink-0 bg-gray-100 rounded-xl mr-80"
               *ngIf="!aniadirList; else addTargetList"
