@@ -31,8 +31,9 @@ import {
   faBolt,
   faFilter,
   faUserPlus,
+  faPager,
 } from '@fortawesome/free-solid-svg-icons';
-import { ToDo } from 'src/app/models/todo.model';
+import { Column, ToDo } from 'src/app/models/todo.model';
 
 @Component({
   selector: 'app-board',
@@ -61,27 +62,46 @@ export class BoardComponent {
   faBolt = faBolt;
   faFilter = faFilter;
   faUserPlus = faUserPlus;
+  faPager = faPager;
 
   titleCard: string = 'Mi tablero Trello';
   editMode: boolean | null = false;
+  addMode: boolean = false;
+  currentIndex: number | null = null;
+  aniadirList: boolean = false;
+  inputValueList: string = '';
 
-  toDos: ToDo[] = [
+  toDos: ToDo[] = [];
+  doing: ToDo[] = [];
+  done: ToDo[] = [];
+
+  columns: Column[] = [
     {
-      id: '1',
-      title: 'Task 1',
+      title: 'Lista de Tareas',
+      todos: [
+        {
+          id: '1',
+          title: 'Task 1',
+        },
+        {
+          id: '2',
+          title: 'Task 2',
+        },
+        {
+          id: '3',
+          title: 'Task 3',
+        },
+      ],
     },
     {
-      id: '2',
-      title: 'Task 2',
+      title: 'En proceso',
+      todos: [{ id: '3', title: 'completar fidelidad de disenio' }],
     },
     {
-      id: '3',
-      title: 'Task 3',
+      title: 'Hecho',
+      todos: [{ id: '4', title: 'fidelidad del navbar del board' }],
     },
   ];
-
-  doing: ToDo[] = [{ id: '3', title: 'completar fidelidad de disenio' }];
-  done: ToDo[] = [{ id: '4', title: 'fidelidad del navbar del board' }];
 
   constructor(private renderer: Renderer2) {}
 
@@ -120,5 +140,31 @@ export class BoardComponent {
   modificacionTitleCard(event: any) {
     this.titleCard = event.target.value;
     this.disableEditMode();
+  }
+
+  changeModAdd(index: number) {
+    this.currentIndex = index;
+  }
+
+  closeChangeModAdd() {
+    this.currentIndex = null;
+  }
+
+  toggleList() {
+    this.aniadirList = !this.aniadirList;
+  }
+
+  addColumnList() {
+    if (this.inputValueList.trim() !== '') {
+      this.columns.push({
+        title: this.inputValueList,
+        todos: [],
+      });
+
+      // Puedes realizar otras acciones aquí, como enviar el contenido a un servicio.
+    }
+
+    // Limpiar el campo de entrada después de guardar.
+    this.inputValueList = '';
   }
 }
