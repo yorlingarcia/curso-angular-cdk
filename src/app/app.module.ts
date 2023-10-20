@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DialogModule } from '@angular/cdk/dialog';
+
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -37,6 +40,7 @@ export function createTranslateLoader(http: HttpClient) {
     OverlayModule,
     CdkAccordionModule,
     DragDropModule,
+    DialogModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
