@@ -1,8 +1,10 @@
+import { Dialog } from '@angular/cdk/dialog';
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import { Overlay } from '@angular/cdk/overlay';
 import {
   AfterViewInit,
   Component,
@@ -33,6 +35,7 @@ import {
   faUserPlus,
   faPager,
 } from '@fortawesome/free-solid-svg-icons';
+import { TodoDialogComponent } from 'src/app/components/todo-dialog/todo-dialog.component';
 import { Column, ToDo } from 'src/app/models/todo.model';
 
 @Component({
@@ -103,7 +106,11 @@ export class BoardComponent {
     },
   ];
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    private dialog: Dialog,
+    private overlay: Overlay
+  ) {}
 
   drop(event: CdkDragDrop<ToDo[]>) {
     if (event.previousContainer === event.container) {
@@ -170,5 +177,12 @@ export class BoardComponent {
 
     // Limpiar el campo de entrada después de guardar.
     this.inputValueList = '';
+  }
+
+  openDialog() {
+    this.dialog.open(TodoDialogComponent, {
+      minWidth: '300px',
+      maxWidth: '70%',
+    });
   }
 }

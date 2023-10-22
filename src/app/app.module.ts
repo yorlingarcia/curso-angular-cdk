@@ -20,6 +20,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BoardComponent } from './pages/board/board.component';
+import { TodoDialogComponent } from './components/todo-dialog/todo-dialog.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,6 +35,7 @@ export function createTranslateLoader(http: HttpClient) {
     BoardsComponent,
     NavbarComponent,
     BoardComponent,
+    TodoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
     CdkAccordionModule,
     DragDropModule,
     DialogModule,
+    ScrollingModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {

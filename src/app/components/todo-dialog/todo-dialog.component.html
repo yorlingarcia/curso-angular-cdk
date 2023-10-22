@@ -1,0 +1,172 @@
+<!-- <div class="bg-gray-100">
+  <h1 class="text-xl">Hola souy un dialog / modal</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas magnam error
+    corporis tempore quam velit maxime aperiam consequuntur? Maiores
+    perspiciatis sunt officia et deserunt, esse dolore incidunt assumenda
+    adipisci commodi.
+  </p>
+  <button (click)="close()">CLose</button>
+</div> -->
+<div
+  cdkScrollable
+  class="p-6 bg-gray-100 relative rounded-xl shadow overflow-y-auto"
+>
+  <button
+    (click)="close()"
+    type="button"
+    class="absolute top-3 right-3 focus:outline-none p-2"
+  >
+    <fa-icon [icon]="faClose"></fa-icon>
+  </button>
+  <div class="flex space-x-2 mb-5">
+    <fa-icon class="text-gray-800 text-xl" [icon]="faPager"></fa-icon>
+    <div class="flex flex-col">
+      <h3 class="text-lg font-semibold text-gray-800">
+        {{ "Nombre de la tarea" }}
+      </h3>
+      <p class="text-sm text-gray-500">
+        en la lista <a href="" class="underline">Lista de tareas</a>
+        <fa-icon *ngIf="checkedSeguir" [icon]="faEye" class="mx-1"></fa-icon>
+      </p>
+    </div>
+  </div>
+  <div class="flex w-full gap-4 flex-row">
+    <div class="flex flex-col">
+      <!-- Notificaciones -->
+      <div class="flex space-x-2 mb-5 w-4/6">
+        <div class="w-6 h-6 flex items-center justify-center"></div>
+        <div class="flex flex-col">
+          <p class="text-sm font-semibold text-gray-700">Notificaciones</p>
+          <button
+            (click)="checkedSeguir = !checkedSeguir"
+            class="rounded hover:bg-gray-300 bg-gray-200 flex flex-row p-2 items-center h-9"
+          >
+            <fa-icon class="text-gray-800 mx-2" [icon]="faEye"></fa-icon>
+            <div>Seguir</div>
+            <div *ngIf="checkedSeguir" class="mx-2">
+              <fa-icon [icon]="faCheck" class="text-gray-800"></fa-icon>
+            </div>
+          </button>
+        </div>
+      </div>
+      <!-- Descripcion -->
+      <div class="flex space-x-2 mb-5 w-full">
+        <div class="w-6 h-6 flex items-center justify-center">
+          <fa-icon class="text-gray-800 text-xl" [icon]="faBars"></fa-icon>
+        </div>
+        <div class="flex flex-col w-full gap-2">
+          <h3 class="text-lg font-semibold text-gray-800">Descripción</h3>
+          <div
+            (click)="toggleDescripcion()"
+            *ngIf="checkedDescripcion; else permitirDescripcion"
+            class="bg-gray-300 h-20 w-full rounded p-2 hover:bg-gray-400"
+          >
+            <p class="text-sm text-gray-600">
+              Añadir una descripción más detallada...
+            </p>
+          </div>
+          <ng-template #permitirDescripcion>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Necesita ayuda en la relacion del formato? Si es así, escriba '/help'"
+              autofocus
+            ></textarea>
+            <div class="flex flex-row gap-2 justify-between">
+              <div class="flex flex-row gap-2">
+                <button class="text-white bg-sky-700 p-2 rounded">
+                  Guardar
+                </button>
+                <button
+                  class="text-gray-500 p-2 rounded hover:bg-gray-300"
+                  (click)="toggleDescripcion()"
+                >
+                  Cancelar
+                </button>
+              </div>
+              <button
+                class="text-gray-500 p-2 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Guía de Formato
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <!-- Actividad -->
+      <div class="flex space-x-2 mb-5 w-full">
+        <div class="w-6 h-6 flex items-center justify-center">
+          <fa-icon class="text-gray-800 text-xl" [icon]="faList"></fa-icon>
+        </div>
+        <div class="flex flex-col w-full gap-2">
+          <div class="flex flex-row justify-between items-center">
+            <h3 class="text-lg font-semibold text-gray-800">Actividad</h3>
+            <button
+              class="text-gray-500 p-2 rounded bg-gray-200 hover:bg-gray-300"
+            >
+              Mostrar detalles
+            </button>
+          </div>
+          <div
+            (click)="toggleDescripcion()"
+            *ngIf="checkedDescripcion; else permitirDescripcion"
+            class="bg-gray-300 h-20 w-full rounded p-2 hover:bg-gray-400"
+          >
+            <p class="text-sm text-gray-600">
+              Añadir una descripción más detallada...
+            </p>
+          </div>
+          <ng-template #permitirDescripcion>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Necesita ayuda en la relacion del formato? Si es así, escriba '/help'"
+              autofocus
+            ></textarea>
+            <div class="flex flex-row gap-2 justify-between">
+              <div class="flex flex-row gap-2">
+                <button class="text-white bg-sky-700 p-2 rounded">
+                  Guardar
+                </button>
+                <button
+                  class="text-gray-500 p-2 rounded hover:bg-gray-300"
+                  (click)="toggleDescripcion()"
+                >
+                  Cancelar
+                </button>
+              </div>
+              <button
+                class="text-gray-500 p-2 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Guía de Formato
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-auto space-y-2 flex-col">
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faUser"></fa-icon>
+        Members
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faTag"></fa-icon>
+        Labels
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faCheckSquare"></fa-icon>
+        Checklist
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faClock"></fa-icon>
+        Dates
+      </app-btn>
+    </div>
+  </div>
+</div>

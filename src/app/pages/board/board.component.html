@@ -58,7 +58,7 @@
           </div>
         </button>
       </div>
-      <div class="pl-2">Vistas del espacio de trabajo</div>
+      <div class="pl-2 mb-2">Vistas del espacio de trabajo</div>
       <div class="flex flex-col">
         <button
           class="button-section-board py-2 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
@@ -101,7 +101,7 @@
         </div>
       </div>
       <div
-        class="button-section-board py-2 flex flex-row justify-between items-center hover:bg-gray-200 bg-gray-300 w-full"
+        class="button-section-board p-2 flex flex-row justify-between items-center hover:bg-gray-200 bg-gray-300 w-full"
       >
         <button type="button" class="flex flex-row">
           <div class="w-6 h-6 bg-gray-500"></div>
@@ -223,6 +223,7 @@
                 [cdkDropListData]="column.todos"
               >
                 <div
+                  (click)="openDialog()"
                   *ngFor="let toDo of column.todos"
                   cdkDrag
                   class="bg-white shadow p-2 rounded-xl mt-2 border-2 border-x-gray-300 cursor-pointer hover:border-blue-500"

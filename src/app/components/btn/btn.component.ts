@@ -15,6 +15,11 @@ export class BtnComponent implements OnInit {
 
   get colors() {
     return {
+      'text-white':
+        this.color === 'succes' ||
+        this.color === 'primary' ||
+        this.color === 'red',
+      'text-gray-700': this.color === 'gray-light',
       'hover:bg-green-600': this.color === 'green',
       'bg-green-700': this.color === 'green',
       'focus:ring-green-300': this.color === 'green',
@@ -27,6 +32,9 @@ export class BtnComponent implements OnInit {
       'hover:bg-sky-600': this.color === 'sky',
       'bg-sky-700': this.color === 'sky',
       'focus:ring-sky-300': this.color === 'sky',
+      'hover:bg-gray-500': this.color === 'gray-light',
+      'bg-gray-200': this.color === 'gray-light',
+      'focus:ring-gray-50': this.color === 'gray-light',
     };
   }
 }
