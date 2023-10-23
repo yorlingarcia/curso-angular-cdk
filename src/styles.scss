@@ -24,3 +24,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
 }
+
+.cdk-overlay-container {
+  overflow-y: auto;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.32);
+}
+
+.cdk-overlay-dark-backdrop {
+  background-color: transparent;
+}

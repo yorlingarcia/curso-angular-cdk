@@ -8,16 +8,13 @@
   </p>
   <button (click)="close()">CLose</button>
 </div> -->
-<div
-  cdkScrollable
-  class="p-6 bg-gray-100 relative rounded-xl shadow overflow-y-auto"
->
+<div cdkScrollable class="p-6 bg-gray-100 relative rounded-xl shadow">
   <button
     (click)="close()"
     type="button"
-    class="absolute top-3 right-3 focus:outline-none p-2"
+    class="absolute top-3 right-3 focus:outline-none p-2 w-10 h-10 flex items-center justify-center rotate-45 hover:bg-gray-300 rounded-full"
   >
-    <fa-icon [icon]="faClose"></fa-icon>
+    <fa-icon [icon]="faPlus"></fa-icon>
   </button>
   <div class="flex space-x-2 mb-5">
     <fa-icon class="text-gray-800 text-xl" [icon]="faPager"></fa-icon>
@@ -110,6 +107,17 @@
               Mostrar detalles
             </button>
           </div>
+        </div>
+      </div>
+      <div class="flex space-x-2 mb-5 w-full">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <img
+            class="w-10 h-10 rounded-full"
+            src="https://api.lorem.space/image/face?w=400&h=400"
+            alt="user photo"
+          />
+        </div>
+        <div class="flex flex-col w-full gap-2">
           <button
             (click)="toggleActividad()"
             *ngIf="checkedActividad; else permitirActividad"
@@ -140,13 +148,14 @@
       </div>
     </div>
     <div class="flex flex-auto space-y-2 flex-col">
+      <div class="text-sm">Añadir a la tarjeta</div>
       <app-btn typeBtn="button" color="gray-light">
         <fa-icon class="text-gray-800" [icon]="faUser"></fa-icon>
-        Members
+        Miembros
       </app-btn>
       <app-btn typeBtn="button" color="gray-light">
         <fa-icon class="text-gray-800" [icon]="faTag"></fa-icon>
-        Labels
+        Etiquetas
       </app-btn>
       <app-btn typeBtn="button" color="gray-light">
         <fa-icon class="text-gray-800" [icon]="faCheckSquare"></fa-icon>
@@ -154,7 +163,62 @@
       </app-btn>
       <app-btn typeBtn="button" color="gray-light">
         <fa-icon class="text-gray-800" [icon]="faClock"></fa-icon>
-        Dates
+        Fechas
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faPaperClip"></fa-icon>
+        Adjunto
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faDesktop"></fa-icon>
+        Portada
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faSlidersH"></fa-icon>
+        Campos personalizados
+      </app-btn>
+      <div class="mb-8 text-sm">Power-Ups</div>
+      <button
+        class="flex flex-row item-center gap-2 rounded hover:bg-gray-300 p-2"
+      >
+        <fa-icon [icon]="faPlus"></fa-icon>
+        <div>Añadir Power-Ups</div>
+      </button>
+      <div class="mb-8 flex flex-row justify-between items-center text-sm">
+        <div>Automatización</div>
+        <div
+          class="w-6 h-6 rounded-full hover:bg-gray-300 flex items-center justify-center"
+        >
+          <fa-icon [icon]="faInfoCircle"></fa-icon>
+        </div>
+      </div>
+      <button
+        class="flex flex-row item-center gap-2 rounded hover:bg-gray-300 p-2"
+      >
+        <fa-icon [icon]="faPlus"></fa-icon>
+        <div>Añadir botón</div>
+      </button>
+      <div class="text-sm mb-8">Acciones</div>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faArrowRight"></fa-icon>
+        Mover
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faCopy"></fa-icon>
+        Copiar
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faPager"></fa-icon>
+        Crear Plantilla
+      </app-btn>
+      <hr />
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faBox"></fa-icon>
+        Archivar
+      </app-btn>
+      <app-btn typeBtn="button" color="gray-light">
+        <fa-icon class="text-gray-800" [icon]="faShare"></fa-icon>
+        Compartir
       </app-btn>
     </div>
   </div>

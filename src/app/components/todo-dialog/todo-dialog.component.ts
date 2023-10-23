@@ -11,6 +11,18 @@ import {
   faEye,
   faCheck,
   faList,
+  faPlus,
+  faInfo,
+  faInfoCircle,
+  faShare,
+  faArrowRight,
+  faBox,
+  faBoxOpen,
+  faCopy,
+  faPaperclip,
+  faDesktop,
+  faSlidersH,
+  faStopCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { ToDo } from 'src/app/models/todo.model';
 
@@ -33,6 +45,15 @@ export class TodoDialogComponent implements OnInit {
   faEye = faEye;
   faCheck = faCheck;
   faList = faList;
+  faPlus = faPlus;
+  faInfoCircle = faInfoCircle;
+  faShare = faShare;
+  faArrowRight = faArrowRight;
+  faBox = faBox;
+  faCopy = faCopy;
+  faPaperClip = faPaperclip;
+  faDesktop = faDesktop;
+  faSlidersH = faSlidersH;
 
   checkedSeguir: boolean = false;
   checkedDescripcion: boolean = true;
