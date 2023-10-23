@@ -23,7 +23,7 @@
     <fa-icon class="text-gray-800 text-xl" [icon]="faPager"></fa-icon>
     <div class="flex flex-col">
       <h3 class="text-lg font-semibold text-gray-800">
-        {{ "Nombre de la tarea" }}
+        {{ toDo.title }}
       </h3>
       <p class="text-sm text-gray-500">
         en la lista <a href="" class="underline">Lista de tareas</a>
@@ -110,41 +110,30 @@
               Mostrar detalles
             </button>
           </div>
-          <div
-            (click)="toggleDescripcion()"
-            *ngIf="checkedDescripcion; else permitirDescripcion"
-            class="bg-gray-300 h-20 w-full rounded p-2 hover:bg-gray-400"
+          <button
+            (click)="toggleActividad()"
+            *ngIf="checkedActividad; else permitirActividad"
+            class="bg-white h-10 w-full rounded p-2 hover:bg-gray-200 text-start"
           >
-            <p class="text-sm text-gray-600">
-              Añadir una descripción más detallada...
-            </p>
-          </div>
-          <ng-template #permitirDescripcion>
+            <p class="text-sm text-gray-400">Excribir un comentario...</p>
+          </button>
+          <ng-template #permitirActividad>
             <textarea
               name=""
               id=""
               cols="30"
-              rows="10"
-              placeholder="Necesita ayuda en la relacion del formato? Si es así, escriba '/help'"
+              rows="3"
+              placeholder="Escribir un comentario..."
               autofocus
             ></textarea>
-            <div class="flex flex-row gap-2 justify-between">
-              <div class="flex flex-row gap-2">
-                <button class="text-white bg-sky-700 p-2 rounded">
-                  Guardar
-                </button>
-                <button
-                  class="text-gray-500 p-2 rounded hover:bg-gray-300"
-                  (click)="toggleDescripcion()"
-                >
-                  Cancelar
-                </button>
-              </div>
-              <button
-                class="text-gray-500 p-2 rounded bg-gray-200 hover:bg-gray-300"
-              >
-                Guía de Formato
+            <div class="flex flex-row gap-2 items-center">
+              <button class="text-white bg-sky-700 p-2 rounded" disabled>
+                Guardar
               </button>
+              <label for="">
+                <input type="checkbox" name="" id="" />
+                Seguir
+              </label>
             </div>
           </ng-template>
         </div>

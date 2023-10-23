@@ -223,7 +223,7 @@
                 [cdkDropListData]="column.todos"
               >
                 <div
-                  (click)="openDialog()"
+                  (click)="openDialog(toDo)"
                   *ngFor="let toDo of column.todos"
                   cdkDrag
                   class="bg-white shadow p-2 rounded-xl mt-2 border-2 border-x-gray-300 cursor-pointer hover:border-blue-500"

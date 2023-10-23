@@ -179,10 +179,13 @@ export class BoardComponent {
     this.inputValueList = '';
   }
 
-  openDialog() {
+  openDialog(toDo: ToDo) {
     this.dialog.open(TodoDialogComponent, {
       minWidth: '300px',
       maxWidth: '70%',
+      data: {
+        toDo,
+      },
     });
   }
 }

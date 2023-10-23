@@ -1,5 +1,5 @@
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
-import { Component, OnInit } from '@angular/core';
+import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
 import {
   faBars,
   faUser,
@@ -12,6 +12,11 @@ import {
   faCheck,
   faList,
 } from '@fortawesome/free-solid-svg-icons';
+import { ToDo } from 'src/app/models/todo.model';
+
+interface Data {
+  toDo: ToDo;
+}
 
 @Component({
   selector: 'app-todo-dialog',
@@ -31,7 +36,15 @@ export class TodoDialogComponent implements OnInit {
 
   checkedSeguir: boolean = false;
   checkedDescripcion: boolean = true;
-  constructor(private dialog: Dialog, private dialogRef: DialogRef) {}
+  checkedActividad: boolean = true;
+
+  toDo: ToDo;
+  constructor(
+    private dialogRef: DialogRef<Data>,
+    @Inject(DIALOG_DATA) data: Data
+  ) {
+    this.toDo = data.toDo;
+  }
 
   ngOnInit(): void {}
   close() {
@@ -41,5 +54,8 @@ export class TodoDialogComponent implements OnInit {
 
   toggleDescripcion() {
     this.checkedDescripcion = !this.checkedDescripcion;
+  }
+  toggleActividad() {
+    this.checkedActividad = !this.checkedActividad;
   }
 }
