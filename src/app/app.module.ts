@@ -22,6 +22,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BoardComponent } from './pages/board/board.component';
 import { TodoDialogComponent } from './components/todo-dialog/todo-dialog.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ScrollComponent } from './pages/scroll/scroll.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,6 +37,7 @@ export function createTranslateLoader(http: HttpClient) {
     NavbarComponent,
     BoardComponent,
     TodoDialogComponent,
+    ScrollComponent,
   ],
   imports: [
     BrowserModule,
