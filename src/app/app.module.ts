@@ -5,6 +5,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DialogModule } from '@angular/cdk/dialog';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -21,7 +22,6 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BoardComponent } from './pages/board/board.component';
 import { TodoDialogComponent } from './components/todo-dialog/todo-dialog.component';
-import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ScrollComponent } from './pages/scroll/scroll.component';
 
 export function createTranslateLoader(http: HttpClient) {
