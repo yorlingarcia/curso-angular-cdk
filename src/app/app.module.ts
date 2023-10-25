@@ -6,6 +6,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DialogModule } from '@angular/cdk/dialog';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkTableModule } from '@angular/cdk/table';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -48,6 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
     DialogModule,
     ScrollingModule,
     HttpClientModule,
+    CdkTableModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
