@@ -11,12 +11,19 @@
         *cdkHeaderRowDef="columns"
         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
       ></tr>
-      <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
+
+      <tr
+        cdk-row
+        class="bg-white border-b"
+        *cdkRowDef="let row; columns: columns"
+      ></tr>
+
       <tr
         cdk-footer-row
         *cdkFooterRowDef="columns"
         class="text-xl text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
       ></tr>
+
       <!-- Columna de id -->
       <ng-container cdkColumnDef="id">
         <th cdk-header-cell *cdkHeaderCellDef class="px-6 py-3">Id.</th>
@@ -29,6 +36,7 @@
         </td>
         <td cdk-footer-cell *cdkFooterCellDef class="px-6 py-4"></td>
       </ng-container>
+
       <!-- Columna de title -->
       <ng-container cdkColumnDef="title">
         <th cdk-header-cell *cdkHeaderCellDef class="px-6 py-3">title</th>
@@ -48,12 +56,13 @@
           cdk-cell
           *cdkCellDef="let row"
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-6 py-4"
-          [ngClass]="{ 'bg-red-200': row.price < 100 }"
+          [ngClass]="{ 'bg-blue-300': row.price < 100 }"
         >
           {{ row.price }}
         </td>
         <td cdk-footer-cell *cdkFooterCellDef class="px-6 py-4">{{ total }}</td>
       </ng-container>
+
       <!-- Columna de image -->
       <ng-container cdkColumnDef="image">
         <th cdk-header-cell *cdkHeaderCellDef class="px-6 py-3">Image</th>
@@ -63,6 +72,19 @@
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-6 py-4"
         >
           <img class="w-20" [src]="row.images[0]" alt="" />
+        </td>
+        <td cdk-footer-cell *cdkFooterCellDef class="px-6 py-4"></td>
+      </ng-container>
+
+      <!-- Columna de actions -->
+      <ng-container cdkColumnDef="actions">
+        <th cdk-header-cell *cdkHeaderCellDef class="px-6 py-3">Actions</th>
+        <td
+          cdk-cell
+          *cdkCellDef="let row"
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-6 py-4"
+        >
+          <app-btn (click)="update(row)">Update</app-btn>
         </td>
         <td cdk-footer-cell *cdkFooterCellDef class="px-6 py-4"></td>
       </ng-container>
