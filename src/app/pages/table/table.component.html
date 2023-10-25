@@ -14,10 +14,17 @@
         <th cdk-header-cell *cdkHeaderCellDef>title</th>
         <td cdk-cell *cdkCellDef="let row">{{ row.title }}</td>
       </ng-container>
-      <!-- Columna de priece -->
+      <!-- Columna de price -->
       <ng-container cdkColumnDef="price">
         <th cdk-header-cell *cdkHeaderCellDef>Price</th>
         <td cdk-cell *cdkCellDef="let row">{{ row.price }}</td>
+      </ng-container>
+      <!-- Columna de image -->
+      <ng-container cdkColumnDef="image">
+        <th cdk-header-cell *cdkHeaderCellDef>Image</th>
+        <td cdk-cell *cdkCellDef="let row">
+          <img class="w-64" [src]="row.images[0]" alt="" />
+        </td>
       </ng-container>
     </table>
   </div>

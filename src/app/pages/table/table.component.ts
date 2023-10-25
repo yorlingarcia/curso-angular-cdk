@@ -8,7 +8,7 @@ import { Product } from 'src/app/models/product.model';
 })
 export class TableComponent implements OnInit {
   productos: Product[] = [];
-  columns: string[] = ['id', 'title', 'price'];
+  columns: string[] = ['id', 'title', 'price', 'image'];
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
