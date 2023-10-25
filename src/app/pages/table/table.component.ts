@@ -25,7 +25,7 @@ export class TableComponent implements OnInit {
       });
     this.input.valueChanges
       .pipe(debounceTime(300))
-      .subscribe((value) => console.log(value));
+      .subscribe((value) => this.dataSource.find(value));
   }
 
   update(producto: Product) {
