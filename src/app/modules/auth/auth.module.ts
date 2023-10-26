@@ -16,6 +16,7 @@ import { SesionBodyComponent } from './components/sesion-body/sesion-body.compon
 import { HeaderComponent } from './components/header/header.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,6 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
     SesionBodyComponent,
     HeaderComponent,
     LoginFormComponent,
+    RegisterFormComponent,
   ],
   imports: [
     CommonModule,

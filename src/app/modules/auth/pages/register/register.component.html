@@ -2,52 +2,7 @@
   <app-header></app-header>
   <div class="bg-white rounded shadow-none sm:shadow-lg py-4 px-6 md:px-10">
     <div class="mb-4">
-      <h1 class="text-center font-bold pt-4 pb-8">Sign up for your account</h1>
-      <form action="" novalidate class="space-y-4">
-        <div class="relative">
-          <input
-            type="text"
-            class="w-full rounded bg-gray-100 border-2 border-gray-300"
-            placeholder="Enter your name"
-          />
-        </div>
-        <div class="relative">
-          <input
-            type="email"
-            class="w-full rounded bg-gray-100 border-2 border-gray-300"
-            placeholder="Enter Email"
-          />
-        </div>
-        <div class="relative">
-          <input
-            type="password"
-            class="w-full rounded bg-gray-100 border-2 border-gray-300"
-            placeholder="Enter password"
-          />
-        </div>
-        <div class="relative">
-          <input
-            type="password"
-            class="w-full rounded bg-gray-100 border-2 border-gray-300"
-            placeholder="Confirm password"
-          />
-        </div>
-        <div class="text-gray-500 font-normal">
-          By clicking “Continue” below, you agree to the Atlassian
-          <a class="text-blue-600 font-light text-sm hover:underline" href=""
-            >Cloud Terms of Service</a
-          >
-          and acknowledge the
-          <a class="text-blue-600 font-light text-sm hover:underline" href=""
-            >Privacy Policy</a
-          >.
-        </div>
-        <div>
-          <app-btn typeBtn="submit">
-            <span class="flex justify-center">Continue</span>
-          </app-btn>
-        </div>
-      </form>
+      <app-register-form></app-register-form>
       <app-sesion-body></app-sesion-body>
       <div
         class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row"
