@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faEye, faEyeSlash, faPen } from '@fortawesome/free-solid-svg-icons';
+import { RequestStatus } from 'src/app/models/request-status.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginFormComponent {
   faEye = faEye;
   faEyeSlash = faEyeSlash;
   showPassword = false;
-  status: 'success' | 'init' | 'failed' | 'loading' = 'init';
+  status: RequestStatus = 'init';
 
   constructor(
     private formBuilder: FormBuilder,

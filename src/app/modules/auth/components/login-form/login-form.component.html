@@ -65,6 +65,12 @@
       </p>
     </div>
   </div>
+  <div
+    *ngIf="status === 'failed'"
+    class="font-medium text-red-500 text-xs mt-1 ml-1"
+  >
+    <p>Credential are invalid</p>
+  </div>
   <div>
     <app-btn typeBtn="submit" color="success" [loading]="status === 'loading'">
       <span class="flex justify-center">Log In</span></app-btn
