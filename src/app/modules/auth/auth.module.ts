@@ -11,13 +11,15 @@ import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SesionBodyComponent } from './components/sesion-body/sesion-body.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [HomeComponent, LoginComponent, RegisterComponent, RecoveryComponent],
+  declarations: [HomeComponent, LoginComponent, RegisterComponent, RecoveryComponent, FooterComponent, SesionBodyComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

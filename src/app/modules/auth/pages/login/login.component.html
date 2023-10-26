@@ -1,4 +1,4 @@
-<div class="relative w-full sm:w-7/12 md:w-6/12 lg:w-4/12 m-auto">
+<div class="relative w-full sm:w-7/12 md:w-6/12 lg:w-4/12 mx-auto">
   <header class="pt-6 pb-2 flex justify-center">
     <img
       loading="lazy"
@@ -31,61 +31,7 @@
           </app-btn>
         </div>
       </form>
-      <div class="flex justify-center items-center w-full py-3 font-light">
-        OR
-      </div>
-      <div class="flex justify-center items-center flex-col">
-        <button
-          class="border my-1 shadow-lg flex flex-row justify-center items-center w-full font-semibold rounded text-sm focus:ring-4 px-5 py-2 hover:bg-gray-50"
-        >
-          <span
-            ><img
-              loading="lazy"
-              class="w-8 h-8"
-              src="/assets/svg/icons8-logo-de-google.svg"
-              alt=""
-            />
-          </span>
-          <p class="px-1">Continuar con Google</p>
-        </button>
-        <button
-          class="flex flex-row justify-center my-1 shadow-lg border items-center w-full font-semibold rounded text-sm focus:ring-4 px-5 py-2 hover:bg-gray-50"
-        >
-          <span
-            ><img
-              loading="lazy"
-              class="w-8 h-8"
-              src="/assets/svg/icons8-microsoft.svg"
-              alt=""
-          /></span>
-          <p class="px-1">Continuar con Microsoft</p>
-        </button>
-        <button
-          class="border my-1 justify-center shadow-lg flex flex-row items-center w-full font-semibold rounded text-sm focus:ring-4 px-5 py-2 hover:bg-gray-50"
-        >
-          <span
-            ><img
-              loading="lazy"
-              class="w-8 h-8"
-              src="/assets/svg/icons8-mac-os.svg"
-              alt=""
-          /></span>
-          <p class="px-1">Continuar con Apple</p>
-        </button>
-        <button
-          class="border my-1 shadow-lg flex flex-row items-center justify-center w-full font-semibold rounded text-sm focus:ring-4 px-5 py-2 hover:bg-gray-50"
-        >
-          <span
-            ><img
-              loading="lazy"
-              class="w-8 h-8"
-              src="/assets/svg/icons8-slack-nuevo.svg"
-              alt=""
-          /></span>
-          <p class="px-1">Continuar con Slack</p>
-        </button>
-      </div>
-      <hr class="my-4 border-b-1 border-gray-400" />
+      <app-sesion-body></app-sesion-body>
       <div
         class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row"
       >
@@ -127,25 +73,6 @@
       </option>
     </select>
   </div>
-  <hr class="my-4 border-b-1 border-gray-400" />
-  <div class="flex justify-center">
-    <img
-      loading="lazy"
-      class="w-32 mt-4"
-      src="/assets/images/logo/logo-atlassian-blue.png"
-      alt="logo"
-    />
-  </div>
-  <div
-    class="py-4 flex justify-between items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row"
-  >
-    <a class="text-gray-600 font-light hover:underline" href="">Templates</a>
-    <a class="text-gray-600 font-light hover:underline" href="">Pricing</a>
-    <a class="text-gray-600 font-light hover:underline" href="">Apps</a>
-    <a class="text-gray-600 font-light hover:underline" href="">Jobs</a>
-    <a class="text-gray-600 font-light hover:underline" href="">Blog</a>
-    <a class="text-gray-600 font-light hover:underline" href="">Developers</a>
-    <a class="text-gray-600 font-light hover:underline" href="">About</a>
-    <a class="text-gray-600 font-light hover:underline" href="">Help</a>
-  </div>
+
+  <app-footer></app-footer>
 </div>
