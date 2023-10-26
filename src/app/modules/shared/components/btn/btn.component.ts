@@ -1,41 +1,59 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-btn',
   templateUrl: './btn.component.html',
-  styleUrls: ['./btn.component.scss'],
 })
-export class BtnComponent implements OnInit {
-  @Input() typeBtn: 'button' | 'submit' | 'reset' = 'button';
-  @Input() color = 'primary';
+export class BtnComponent {
+  @Input() disabled = false;
+  @Input() loading = false;
+  @Input() typeBtn: 'reset' | 'submit' | 'button' = 'button';
+  @Input() color: 'success' | 'primary' | 'danger' | 'light' | 'sky' =
+    'primary';
+  faSpinner = faSpinner;
+
+  mapColors = {
+    success: {
+      'bg-success-600': true,
+      'hover:bg-success-500': true,
+      'focus:ring-success-300': true,
+      'text-white': true,
+    },
+    primary: {
+      'bg-primary-700': true,
+      'hover:bg-primary-800': true,
+      'focus:ring-primary-300': true,
+      'text-white': true,
+    },
+    danger: {
+      'bg-danger-700': true,
+      'hover:bg-danger-800': true,
+      'focus:ring-danger-300': true,
+      'text-white': true,
+    },
+    light: {
+      'bg-gray-200': true,
+      'hover:bg-gray-500': true,
+      'focus:ring-gray-50': true,
+      'text-gray-700': true,
+      'hover:text-white': true,
+    },
+    sky: {
+      'bg-sky-700': true,
+      'hover:bg-sky-800': true,
+      'focus:ring-sky-300': true,
+      'text-white': true,
+    },
+  };
 
   constructor() {}
 
-  ngOnInit(): void {}
-
   get colors() {
-    return {
-      'text-white':
-        this.color === 'succes' ||
-        this.color === 'primary' ||
-        this.color === 'green' ||
-        this.color === 'red',
-      'text-gray-700': this.color === 'gray-light',
-      'hover:bg-green-500': this.color === 'green',
-      'bg-green-600': this.color === 'green',
-      'focus:ring-green-300': this.color === 'green',
-      'hover:bg-primary-600': this.color === 'primary',
-      'bg-primary-700': this.color === 'primary',
-      'focus:ring-primary-300': this.color === 'primary',
-      'hover:bg-red-600': this.color === 'red',
-      'bg-red-700': this.color === 'red',
-      'focus:ring-red-300': this.color === 'red',
-      'hover:bg-sky-600': this.color === 'sky',
-      'bg-sky-700': this.color === 'sky',
-      'focus:ring-sky-300': this.color === 'sky',
-      'hover:bg-gray-500': this.color === 'gray-light',
-      'bg-gray-200': this.color === 'gray-light',
-      'focus:ring-gray-50': this.color === 'gray-light',
-    };
+    const colors = this.mapColors[this.color];
+    if (colors) {
+      return colors;
+    }
+    return {};
   }
 }

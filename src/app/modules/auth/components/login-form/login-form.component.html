@@ -32,16 +32,42 @@
       </p>
     </div>
   </div>
-  <div class="relative">
-    <input
-      type="password"
-      class="w-full rounded bg-gray-100 border-2 border-gray-300"
-      placeholder="Enter password"
-    />
+  <div>
+    <div class="relative">
+      <input
+        formControlName="password"
+        placeholder="Enter password"
+        [type]="showPassword ? 'text' : 'password'"
+        class="w-full rounded bg-gray-100 border-gray-300 border-2"
+      />
+      <button
+        type="button"
+        class="p-2 absolute right-2"
+        (click)="showPassword = !showPassword"
+      >
+        <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
+      </button>
+    </div>
+    <div
+      *ngIf="form.controls.password.touched && form.controls.password.invalid"
+    >
+      <p
+        *ngIf="form.controls.password.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        This field is mandatory
+      </p>
+      <p
+        *ngIf="form.controls.password.hasError('minlength')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        This field should be greater than 6 characters
+      </p>
+    </div>
   </div>
   <div>
-    <app-btn [typeBtn]="'submit'" [color]="'green'">
-      <span class="flex justify-center">Log In</span>
-    </app-btn>
+    <app-btn typeBtn="submit" color="success" [loading]="status === 'loading'">
+      <span class="flex justify-center">Log In</span></app-btn
+    >
   </div>
 </form>
