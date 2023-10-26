@@ -18,10 +18,11 @@ export class BtnComponent implements OnInit {
       'text-white':
         this.color === 'succes' ||
         this.color === 'primary' ||
+        this.color === 'green' ||
         this.color === 'red',
       'text-gray-700': this.color === 'gray-light',
-      'hover:bg-green-600': this.color === 'green',
-      'bg-green-700': this.color === 'green',
+      'hover:bg-green-500': this.color === 'green',
+      'bg-green-600': this.color === 'green',
       'focus:ring-green-300': this.color === 'green',
       'hover:bg-primary-600': this.color === 'primary',
       'bg-primary-700': this.color === 'primary',

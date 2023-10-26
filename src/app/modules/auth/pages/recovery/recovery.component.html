@@ -1,1 +1,57 @@
-<p>recovery works!</p>
+<div class="relative w-full sm:w-7/12 md:w-6/12 lg:w-4/12 mx-auto">
+  <div
+    class="bg-white rounded shadow-none sm:shadow-lg py-4 px-6 md:px-10 mt-20"
+  >
+    <div class="mb-4">
+      <app-header></app-header>
+      <h1 class="text-center font-semibold py-3">Can't you sign in?</h1>
+      <form action="" novalidate class="space-y-4">
+        <div class="relative">
+          <span class="text-gray-600 font-light text-sm"
+            >We'll send a recovery link to</span
+          >
+          <input
+            type="email"
+            class="w-full rounded bg-gray-100 border-2 border-gray-300"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div>
+          <app-btn [typeBtn]="'submit'">
+            <span class="flex justify-center">Send recovery link</span>
+          </app-btn>
+        </div>
+      </form>
+      <div
+        class="my-4 flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row"
+      >
+        <a class="text-blue-600 font-light hover:underline" routerLink="/login"
+          >Back to Login</a
+        >
+      </div>
+      <hr class="my-4 border-b-1 border-gray-400" />
+      <!-- Footer recovery -->
+      <div class="flex justify-center">
+        <img
+          loading="lazy"
+          class="w-32 mt-4"
+          src="/assets/images/logo/logo-atlassian-gray.png"
+          alt="logo"
+        />
+      </div>
+      <div class="flex justify-center mt-4">
+        <div class="text-sky-950 font-semibold text-sm">
+          An account for Trello, Jira, Confluence and
+          <a class="text-blue-600 font-light hover:underline" href="">more</a>.
+        </div>
+      </div>
+      <div
+        class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row text-sky-950 font-semibold text-sm"
+      >
+        <a class="hover:underline" href="">Login support</a>
+        <span class="text-gray-600 font-light">- Oh, it's a.</span>
+        <a class="hover:underline" href="">Contact the support service</a>
+      </div>
+    </div>
+  </div>
+</div>
