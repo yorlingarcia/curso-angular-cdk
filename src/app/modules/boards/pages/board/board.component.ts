@@ -35,7 +35,7 @@ import {
   faUserPlus,
   faPager,
 } from '@fortawesome/free-solid-svg-icons';
-import { TodoDialogComponent } from 'src/app/components/todo-dialog/todo-dialog.component';
+import { TodoDialogComponent } from 'src/app/modules/boards/components/todo-dialog/todo-dialog.component';
 import { Column, ToDo } from 'src/app/models/todo.model';
 
 @Component({

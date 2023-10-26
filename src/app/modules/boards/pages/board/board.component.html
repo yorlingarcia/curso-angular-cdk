@@ -1,0 +1,329 @@
+<div class="flex flex-row grow w-full">
+  <!-- columna izquierda del page board -->
+  <div class="flex flex-col w-[20%] h-full text-base">
+    <div
+      class="px-2 flex flex-row justify-between items-center border-b-2 border-gray-300"
+    >
+      <div class="flex flex-row items-center">
+        <button
+          type="button"
+          class="mx-2 w-8 h-8 bg-green-400 rounded"
+        ></button>
+        <div class="flex flex-col justify-start">
+          <p>Espacio de trabajo</p>
+          <button class="p-0 text-start">Nombre</button>
+          <p>Gratuito</p>
+        </div>
+      </div>
+      <button class="hover:bg-gray-300 w-8 h-8 rounded">
+        <fa-icon [icon]="faAngleLeft"></fa-icon>
+      </button>
+    </div>
+    <div class="my-4">
+      <button
+        class="py-1 flex flex-row justify-start hover:bg-gray-200 w-full"
+        type="button"
+      >
+        <div class="pl-3">
+          <fa-icon [icon]="faTrello"></fa-icon>
+        </div>
+        <div class="pl-2">Tableros</div>
+      </button>
+      <button
+        class="py-1 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
+        type="button"
+      >
+        <div class="flex flex-row">
+          <div class="pl-3">
+            <fa-icon [icon]="faUser"></fa-icon>
+          </div>
+          <div class="pl-2">Miembros</div>
+        </div>
+        <button class="w-8 h-8 rounded mr-2 hover:bg-gray-400">
+          <fa-icon [icon]="faPlus"></fa-icon>
+        </button>
+      </button>
+      <button
+        class="py-2 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
+        type="button"
+      >
+        <div class="pl-3">
+          <fa-icon [icon]="faGear"></fa-icon>
+        </div>
+        <div class="pl-2">Ajustes del espacio de trabajo</div>
+        <div class="px-2 mr-2 w-8 h-8">
+          <fa-icon [icon]="faAngleDown"></fa-icon>
+        </div>
+      </button>
+    </div>
+    <div class="pl-2 mb-2">Vistas del espacio de trabajo</div>
+    <div class="flex flex-col">
+      <button
+        class="button-section-board py-2 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
+        type="button"
+      >
+        <div class="flex flex-row">
+          <div class="pl-3">
+            <fa-icon [icon]="faTable"></fa-icon>
+          </div>
+          <div class="pl-2">Tabla</div>
+        </div>
+        <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
+          <fa-icon [icon]="faEllipsisH"></fa-icon>
+        </button>
+      </button>
+      <button
+        class="button-section-board py-2 flex flex-row justify-between items-center hover:bg-gray-200 w-full"
+        type="button"
+      >
+        <div class="flex flex-row">
+          <div class="pl-3">
+            <fa-icon [icon]="faCalendar"></fa-icon>
+          </div>
+          <div class="pl-2">Calendario</div>
+        </div>
+        <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
+          <fa-icon [icon]="faEllipsisH"></fa-icon>
+        </button>
+      </button>
+    </div>
+    <div class="my-2 button-section-board flex flex-row justify-between px-2">
+      <div>Sus tableros</div>
+      <div class="flex flex-row">
+        <button class="but-none mx-2 w-6 h-6 hover:bg-gray-300 rounded">
+          <fa-icon [icon]="faEllipsisH"></fa-icon>
+        </button>
+        <button class="w-6 h-6 hover:bg-gray-300 rounded">
+          <fa-icon [icon]="faPlus"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div
+      class="button-section-board p-2 flex flex-row justify-between items-center hover:bg-gray-200 bg-gray-300 w-full"
+    >
+      <button type="button" class="flex flex-row">
+        <div class="w-6 h-6 bg-gray-500"></div>
+        <div class="pl-2">Mi Tablero de Trello</div>
+      </button>
+      <div class="flex flex-row">
+        <button class="but-none w-6 h-6 rounded mr-2 hover:bg-gray-400">
+          <fa-icon [icon]="faEllipsisH"></fa-icon>
+        </button>
+        <button class="but-none w-6 h-6 rounded mr-2">
+          <fa-icon [icon]="faStar"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- columna derecha -->
+  <div class="flex flex-col w-[80%] h-full">
+    <!-- navbar interno de la pagina board -->
+    <div
+      class="w-full bg-gray-200 flex flex-row flex-wrap justify-between items-center p-3"
+    >
+      <div class="flex flex-row items-center">
+        <button
+          type="button"
+          class="mx-2 hover:bg-gray-300 rounded p-2 h-10 flex items-center"
+          [ngClass]="{ editing: editMode }"
+        >
+          <div class="view text-xl" (click)="enableEditMode()">
+            {{ titleCard }}
+          </div>
+          <input
+            #miInput
+            class="text-xl edit p-0"
+            autofocus="autofocus"
+            type="text"
+            [value]="titleCard"
+            (keyup.escape)="disableEditMode()"
+            (keyup.enter)="modificacionTitleCard($event)"
+            (blur)="disableEditMode()"
+          />
+        </button>
+        <button class="mx-1 hover:bg-gray-300 w-10 h-10 rounded">
+          <fa-icon [icon]="faStarOfDavid"></fa-icon>
+        </button>
+        <button class="mx-1 hover:bg-gray-300 w-10 h-10 rounded">
+          <fa-icon [icon]="faUserFriends"></fa-icon>
+        </button>
+        <button
+          class="bg-gray-400 hover:bg-gray-300 mx-1 p-2 flex flex-row justify-between items-center rounded h-10"
+        >
+          <fa-icon [icon]="faChalkBoard"></fa-icon>
+          <div class="ml-2">Tablero</div>
+        </button>
+        <button class="hover:bg-gray-300 w-10 h-10 rounded">
+          <fa-icon [icon]="faAngleDown"></fa-icon>
+        </button>
+      </div>
+      <div class="flex flex-row items-center">
+        <button class="hover:bg-gray-300 w-10 h-10 rounded">
+          <fa-icon [icon]="faRocket"></fa-icon>
+        </button>
+        <button class="hover:bg-gray-300 w-10 h-10 rounded">
+          <fa-icon [icon]="faBolt"></fa-icon>
+        </button>
+        <button
+          class="bg-gray-400 hover:bg-gray-300 mx-1 p-2 flex flex-row justify-between items-center rounded h-10"
+        >
+          <fa-icon [icon]="faFilter"></fa-icon>
+          <div class="ml-2">Filtros</div>
+        </button>
+        <div class="mx-1 w-1 h-6 border-l-2 border-gray-400"></div>
+        <button class="w-10 h-10 rounded-full bg-sky-500 hover:bg-sky-400">
+          <img
+            class="w-10 h-10 rounded-full"
+            src="https://api.lorem.space/image/face?w=400&h=400"
+            alt="user photo"
+          />
+        </button>
+        <button
+          class="bg-gray-400 hover:bg-gray-300 mx-1 p-2 flex flex-row justify-between items-center rounded h-10"
+        >
+          <fa-icon [icon]="faUserPlus"></fa-icon>
+          <div class="ml-2">Compartir</div>
+        </button>
+        <button class="w-10 h-10 rounded hover:bg-gray-300">
+          <fa-icon [icon]="faEllipsisH"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <!-- contenedor de listas / tareas -->
+    <div
+      class="flex flex-row justify-around grow w-full h-full overflow-x-scroll bg-sky-600"
+    >
+      <div class="w-full h-full p-4">
+        <div
+          class="flex items-start w-full h-full"
+          cdkDropListGroup
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+          (cdkDropListDropped)="dropColumn($event)"
+        >
+          <!-- generacion de listas con cilo for -->
+          <div
+            class="rounded-xl bg-gray-200 w-72 p-2 mr-3 shrink-0"
+            *ngFor="let column of columns; let i = index"
+            cdkDrag
+          >
+            <div class="flex items-center justify-between py-1">
+              <h3 class="text-sm font-bold ml-2">{{ column.title }}</h3>
+              <button class="w-10 h-10 rounded-xl hover:bg-gray-300">
+                <fa-icon [icon]="faEllipsisH"></fa-icon>
+              </button>
+            </div>
+
+            <div
+              class="text-sm mt-2 min-h-[2.5rem]"
+              cdkDropList
+              (cdkDropListDropped)="drop($event)"
+              [cdkDropListData]="column.todos"
+            >
+              <div
+                (click)="openDialog(toDo)"
+                *ngFor="let toDo of column.todos"
+                cdkDrag
+                class="bg-white shadow p-2 rounded-xl mt-2 border-2 border-x-gray-300 cursor-pointer hover:border-blue-500"
+              >
+                {{ toDo.title }}
+              </div>
+              <div
+                class="flex flex-row my-2 items-center"
+                *ngIf="currentIndex !== i; else addTarget"
+              >
+                <button
+                  type="button"
+                  class="flex flex-row items-center flex-grow-[4] rounded-xl hover:bg-gray-300 h-10"
+                  (click)="changeModAdd(i)"
+                >
+                  <div class="mx-2">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                  </div>
+                  <div class="mx-1">Añada una tarjeta</div>
+                </button>
+                <button
+                  type="button"
+                  class="flex flex-grow-[1] justify-center items-center w-8 h-10 rounded-xl hover:bg-gray-300"
+                >
+                  <fa-icon [icon]="faPager"></fa-icon>
+                </button>
+              </div>
+              <ng-template #addTarget>
+                <div class="flex flex-col justify-start my-2">
+                  <textarea
+                    name=""
+                    id=""
+                    cols="15"
+                    rows="2"
+                    placeholder="Introduzca un titulo para esta tarjeta..."
+                    class="w-full rounded-xl"
+                    autofocus
+                  ></textarea>
+                  <div class="flex flex-row justify-start items-center mt-2">
+                    <button class="rounded bg-sky-600 h-10 text-white p-2">
+                      Añadir tarjeta
+                    </button>
+                    <button
+                      (click)="closeChangeModAdd()"
+                      class="mx-2 h-10 w-10 hover:bg-gray-300"
+                    >
+                      <div class="rotate-45">
+                        <fa-icon [icon]="faPlus"></fa-icon>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+          <!-- seccion de aniadir otra lista -->
+          <div
+            class="flex flex-row items-center w-72 shrink-0 bg-gray-100 rounded-xl mr-80"
+            *ngIf="!aniadirList; else addTargetList"
+          >
+            <button
+              type="button"
+              class="flex flex-row items-center w-full rounded-xl hover:bg-gray-300 h-10"
+              (click)="toggleList()"
+            >
+              <div class="mx-2">
+                <fa-icon [icon]="faPlus"></fa-icon>
+              </div>
+              <div class="mx-1">Añada otra lista</div>
+            </button>
+          </div>
+          <ng-template #addTargetList>
+            <div
+              class="flex flex-col justify-start bg-gray-200 p-2 rounded-xl w-72 shrink-0"
+            >
+              <input
+                placeholder="Introduzca el titulo de la lista..."
+                class="w-full rounded-xl text-sm"
+                autofocus
+                [(ngModel)]="inputValueList"
+                (keyup.enter)="addColumnList()"
+              />
+              <div class="flex flex-row justify-start items-center mt-2">
+                <button
+                  (click)="addColumnList()"
+                  class="rounded bg-sky-600 h-10 text-white p-2"
+                >
+                  Añadir lista
+                </button>
+                <button
+                  (click)="toggleList()"
+                  class="mx-2 h-10 w-10 hover:bg-gray-300 rounded"
+                >
+                  <div class="rotate-45">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -15,33 +15,22 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { BtnComponent } from './components/btn/btn.component';
-import { BoardsComponent } from './pages/boards/boards.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BoardComponent } from './pages/board/board.component';
-import { TodoDialogComponent } from './components/todo-dialog/todo-dialog.component';
+
 import { ScrollComponent } from './pages/scroll/scroll.component';
 import { TableComponent } from './pages/table/table.component';
+import { AuthModule } from './modules/auth/auth.module';
+import { SharedModule } from './modules/shared/shared.module';
+import { LayoutModule } from './modules/layout/layout.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    BtnComponent,
-    BoardsComponent,
-    NavbarComponent,
-    BoardComponent,
-    TodoDialogComponent,
-    ScrollComponent,
-    TableComponent,
-  ],
+  declarations: [AppComponent, ScrollComponent, TableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -62,6 +51,9 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     FormsModule,
     FontAwesomeModule,
+    AuthModule,
+    SharedModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
