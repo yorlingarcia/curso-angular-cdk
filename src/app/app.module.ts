@@ -24,6 +24,7 @@ import { TableComponent } from './pages/table/table.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { LayoutModule } from './modules/layout/layout.module';
+import { ProfileModule } from './modules/profile/profile.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -54,6 +55,7 @@ export function createTranslateLoader(http: HttpClient) {
     AuthModule,
     SharedModule,
     LayoutModule,
+    ProfileModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
